@@ -8,8 +8,7 @@ parser.add_argument("-s", "--seq", type = str, required = True, help = "Input se
 
 if len(sys.argv) == 1:
     parser.print_help()
-    sys.exit(1)
-
+    
 args = parser.parse_args()
 
 if re.search('^[ACGTU]+$', args.seq):

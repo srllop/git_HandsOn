@@ -13,10 +13,12 @@ if len(sys.argv) == 1:
 args = parser.parse_args()
 
 if re.search('^[ACGTU]+$', args.seq): # Chech characters are nucleotides
-    if re.search('T', args.seq): # Chec for presence of "T"
+    if re.search('T', args.seq) and not re.search('U', args.seq) : # Chec for presence of "T"
         print ('The sequence is DNA')
-    elif re.search('U', args.seq): #Chech for presence of "U"
+    elif re.search('U', args.seq) and not re.search('T', args.seq): #Chech for presence of "U"
         print ('The sequence is RNA')
+    elif re.search('U', args.seq) and re.search('T', args.seq):
+        print ('The sequence is not dna nor RNA')
     else:
         print ('The sequence can be DNA or RNA')
 else:

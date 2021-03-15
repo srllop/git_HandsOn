@@ -28,6 +28,6 @@ if args.motif: # Chech if there's a motif argument
   args.motif = args.motif.upper()
   print(f'Motif search enabled: looking for motif "{args.motif}" in sequence "{args.seq}"... ', end = '')
   if re.match(args.motif, args.seq): #Motif found in seq
-    print("FOUND1!!!! :D ")
+    print("FOUND!!!! :D ")
   else:
     print("NOT FOUND :( ")
